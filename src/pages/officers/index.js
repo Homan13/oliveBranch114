@@ -3,19 +3,18 @@ import { graphql } from 'gatsby';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/index';
 
-const Team = (props) => {
-  const teams = props.data.allMarkdownRemark.edges;
+const Officers = (props) => {
+  const officers = props.data.allMarkdownRemark.edges;
   return (
-    <Layout bodyClass="page-teams">
-      <SEO title="Team" />
+    <Layout bodyClass="page-officers">
+      <SEO title="Officers" />
       <div className="intro">
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h1>Meet The Team</h1>
+              <h1>Lodge Officers</h1>
               <p>
-                Our team of qualified accountants and financial consultants can help your business
-                at any stage of it’s growth.
+                Lodge Officers for the 2019 Masonic Year.
               </p>
             </div>
           </div>
@@ -24,7 +23,7 @@ const Team = (props) => {
 
       <div className="container pb-6">
         <div className="row">
-          {teams.map(edge => (
+          {officers.map(edge => (
             <div key={edge.node.frontmatter.path} className="col-12 col-md-6 mb-1">
               <div className="team card-two">
                 <div className="card-header">
@@ -70,9 +69,9 @@ const Team = (props) => {
 };
 
 export const query = graphql`
-  query TeamQuery {
+  query OfficerQuery {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/team/" } }
+      filter: { fileAbsolutePath: { regex: "/officers/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
@@ -83,7 +82,6 @@ export const query = graphql`
             path
             image
             jobtitle
-            linkedinurl
             email
           }
         }
@@ -92,4 +90,4 @@ export const query = graphql`
   }
 `;
 
-export default Team;
+export default Officers;

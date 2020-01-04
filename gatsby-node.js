@@ -8,8 +8,8 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           query {
-            services: allMarkdownRemark(
-              filter: { fileAbsolutePath: { regex: "/services/" } }
+            about: allMarkdownRemark(
+              filter: { fileAbsolutePath: { regex: "/about/" } }
               sort: { fields: [frontmatter___date], order: DESC }
             ) {
               edges {
@@ -24,8 +24,8 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
-            team: allMarkdownRemark(
-              filter: { fileAbsolutePath: { regex: "/team/" } }
+            officers: allMarkdownRemark(
+              filter: { fileAbsolutePath: { regex: "/officers/" } }
               sort: { fields: [frontmatter___date], order: DESC }
             ) {
               edges {
@@ -59,8 +59,8 @@ exports.createPages = ({ graphql, actions }) => {
           }
         `,
       ).then((result) => {
-        result.data.services.edges.forEach(({ node }) => {
-          const component = path.resolve('src/templates/service.js');
+        result.data.about.edges.forEach(({ node }) => {
+          const component = path.resolve('src/templates/about.js');
           createPage({
             path: node.frontmatter.path,
             component,
@@ -69,8 +69,8 @@ exports.createPages = ({ graphql, actions }) => {
             },
           });
         });
-        result.data.team.edges.forEach(({ node }) => {
-          const component = path.resolve('src/templates/team.js');
+        result.data.officers.edges.forEach(({ node }) => {
+          const component = path.resolve('src/templates/officers.js');
           createPage({
             path: node.frontmatter.path,
             component,

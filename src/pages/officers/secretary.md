@@ -1,12 +1,11 @@
 ---
-path: '/team/sage-kirk'
-title: 'Sage Kirk'
+path: '/team/secretary'
+title: 'Doug Snell'
 date: 2018-11-19T10:47:58+10:00
 draft: false
 image: '/team/sage-kirk-485982-unsplash.jpg'
-jobtitle: 'Accountant'
+jobtitle: 'Lodge Secretary'
 email: 'sage@test.com'
-linkedinurl: 'www.linkedin.com/sagekirk21'
 weight: 2
 ---
 

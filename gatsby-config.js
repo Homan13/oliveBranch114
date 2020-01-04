@@ -2,20 +2,20 @@ const guid = process.env.NETLIFY_GOOGLE_ANALYTICS_ID;
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Serif',
-    description: 'my theme',
+    title: 'Olive Branch Lodge',
+    description: 'Homepage for Olive Branch Lodge No 114, based on Gatsby Serif theme by zerostatic',
     contact: {
       phone: 'XXX XXX XXX',
-      email: 'zerostaticthemes@gmail.com',
+      email: 'info@olivebranch114.org',
     },
     menuLinks: [
       {
-        name: 'Services',
-        link: '/services',
+        name: 'About',
+        link: '/about',
       },
       {
-        name: 'Team',
-        link: '/team',
+        name: 'Officers',
+        link: '/officers',
       },
       {
         name: 'Testimonials',

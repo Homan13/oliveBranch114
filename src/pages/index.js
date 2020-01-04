@@ -13,16 +13,21 @@ const Home = (props) => {
       <SEO title="Home" />
       <Helmet>
         <meta
-          name="description"
-          content="Small Business Theme. Multiple content types using Markdown and JSON sources. Responsive design and SCSS. This is a beautiful and artfully designed starting theme."
+          name=""
+          content=""
         />
       </Helmet>
       <div className="intro pb-4">
         <div className="container">
-          <h1>Serif - Gatsby Small Business Theme.</h1>
+          <h1>Welcome!</h1>
           <p>
-            Multiple content types using Markdown and JSON sources. Responsive design and SCSS. This
-            is a beautiful and artfully designed starting theme.
+            Welcome to the home of Freemasons in Leesburg Virginia, we are Olive Branch Lodge No 114 
+            under the Grand Lodge of Virginia, Ancient Free and Accepted Masons. Our mission is to
+            bring in men from Leesburg, and make them better. We are active in the community through the
+            annual Leesburg Halloween parade, the Purcellville Fourth of July Parade and we support the 
+            American Diabetes Foundations annual Tour de Cure bike race. Our monthly business meetings
+            take place on the first Monday of every month, we meet for dinner at Dog Money Restaraunt and
+            Brewery at 6:30, then convene at the Lodge to start our meeting at 8:00.
           </p>
         </div>
       </div>
@@ -34,7 +39,7 @@ const Home = (props) => {
       <div className="container pt-8 pt-md-10">
         <div className="row justify-content-start">
           <div className="col-12">
-            <h2 className="title-3 text-dark mb-3">Our Services</h2>
+            <h2 className="title-3 text-dark mb-3">About Freemasonry</h2>
           </div>
           {markdown.map(edge => (
             <div key={edge.node.frontmatter.path} className="col-12 col-md-4 mb-1">
@@ -49,8 +54,8 @@ const Home = (props) => {
             </div>
           ))}
           <div className="col-12 text-center">
-            <Link className="button button-primary mt-2" to="/services">
-              View All Services
+            <Link className="button button-primary mt-2" to="/about">
+              View All
             </Link>
           </div>
         </div>
@@ -83,7 +88,7 @@ const Home = (props) => {
 export const query = graphql`
   query {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/services/" } }
+      filter: { fileAbsolutePath: { regex: "/about/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
